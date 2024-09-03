@@ -1,0 +1,244 @@
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    width: 100%;
+    background-color: #333;
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar a {
+    float: left;
+    padding: 12px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    width: 25%;
+    box-sizing: border-box;
+}
+
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+/*
+.content-container {
+    display: flex;
+    margin-top: 50px;
+}*/
+
+/* Ensure the container fits the viewport */
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow-y: auto; /* Prevents scrollbars if container overflows */
+}
+
+/* Container for content, excluding sidebar */
+.content-container {
+    display: flex;
+    min-height: calc(100vh - 50px);
+    margin-top: 50px;
+}
+.content-display {
+    margin-left: 280px;
+    width: calc(100% - 280px);
+    min-height: calc(100vh - 50px);
+    overflow-y: auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#content-display-area {
+    width: 100%;
+    height: auto; /* Changed from 100% */
+    max-width: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.main-content {
+    margin-left: 25%;
+    width: 75%;
+    padding: 20px;
+}
+
+
+.sidebar {
+    width: 280px; /* Set the width of the sidebar */
+    background-color: #f9d9d9;
+    padding: 15px;
+    height: calc(100vh - 50px);
+    box-sizing: border-box;
+    overflow-y: auto;
+    position: fixed;
+    top: 40px; /* Adjusted top position */
+    left: 0;
+    bottom: 0;
+}
+
+.sidebar li, .sub-chapters button {
+    padding: 8px 0;
+    font-weight: bold;
+    color: black; /* Default text color */
+    cursor: pointer;
+    background: none; /* Ensure no default background */
+    border: none; /* Remove any borders from buttons */
+    text-align: left;
+    width: 100%; /* Ensure full width for clickable area */
+}
+
+.sidebar li:hover, .sub-chapters button:hover,
+.sidebar li:focus, .sub-chapters button:focus {
+    background-color: maroon !important;
+    color: rgb(255, 255, 255) !important;
+}
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: static;
+    }
+    .content-display {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+.main-content-body {
+    margin-left: 280px; /* Match the margin-left to the sidebar width */
+    padding: 0;
+    width: calc(100% - 280px); /* Ensure it takes the remaining width */
+    height: calc(100vh - 50px); /* Full height minus the navbar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+}
+
+.main-content-body object {
+    width: 100%;
+    height: 100%;
+    border: none; /* Remove default border */
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sub-chapters {
+    padding-left: 20px;
+    font-family: 'Courier New', Courier, monospace; /* Apply font to sub-chapters */
+}
+
+.sub-chapters button {
+    background: none;
+    border: none;
+    padding: 0 0; /* Set padding */
+    text-align: left;
+    width: 100%; /* Set width */
+    cursor: pointer;
+    font-size: 14px;
+    font-family: 'Courier New', Courier, monospace; /* Apply font to buttons */
+}
+
+.sub-chapters button:hover {
+    background-color: #ddd;
+}
+
+.sidebar li {
+    padding: 8px 0;
+    font-weight: bold;
+}
+
+/* Whiteboard container styling */
+#whiteboard-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+#whiteboard {
+    border: 5px solid #4a4a4a; /* Dark gray border for a classic look */
+    border-radius: 10px; /* Rounded corners for a smoother appearance */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), inset 0 1px 5px rgba(255, 255, 255, 0.3); /* Outer and inner shadow for a more realistic board effect */
+    /*background: linear-gradient(to bottom, #f0f0f0, #e0e0e0); /* Subtle gradient for a textured background */
+}
+
+
+.controls {
+    margin-bottom: 10px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.control-btn {
+    background-color: tomato;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    margin-bottom: 10px; /* Added margin-bottom for gap */
+}
+
+.control-btn:hover {
+    background-color: #ff3814;
+}
+
+input[type="color"] {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+input[type="range"] {
+    width: 100px;
+}
+
+.circular-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: tomato;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    padding: 0;
+}
+
+.button-icon {
+    width: 50px;
+    height: 50px;
+}
+
+.hidden {
+    display: none !important;
+}
