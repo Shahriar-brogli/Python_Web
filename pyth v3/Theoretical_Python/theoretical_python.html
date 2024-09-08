@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theoretical Python</title>
+    <link rel="stylesheet" href="TheoPy.css">
+</head>
+<body>
+    <div class="navbar">
+        <a href="#" onclick="openContent('theoretical_python.html')">Theoretical Python</a>
+        <a href="#" onclick="openContent('applied_python_ds.html')">Applied Python [DS]</a>
+        <a href="#" onclick="openContent('applied_python_sc.html')">Applied Python [SC]</a>
+        <a href="#" onclick="openContent('applied_python_gui.html')">Applied Python [GUI]</a>
+    </div>
+
+    <div class="content-container">
+        <div class="sidebar">
+            <ul>
+                <li>Chapter 1 - The Computer</li>
+                <ul class="sub-chapters">
+                    <li><button onclick="displaySVG('Theoretical 1-02.svg')">1.1 Hardware</button></li>
+                    <li><button onclick="displaySVG('Theoretical 1-03.svg')">1.2 Software</button></li>
+                </ul>
+
+                <li>Chapter 2 - The Expression</li>
+        <ul class="sub-chapters">
+            <li><button onclick="displaySVG('Theoretical 1-04.svg')">2.1 Data</button></li>
+            <li><button onclick="displaySVG('Theoretical 1-05.svg')">2.2 Operation</button></li>
+        </ul>
+
+        <li>Chapter 3 - The Logic</li>
+        <ul class="sub-chapters">
+            <li><button onclick="displaySVG('Theoretical 1-06.svg')">3.1 Condition</button></li>
+            <li><button onclick="displaySVG('Theoretical 1-07.svg')">3.2 Loop</button></li>
+        </ul>
+
+        <li>Chapter 4 - The Process</li>
+        <ul class="sub-chapters">
+            <li><button onclick="displaySVG('Theoretical 1-08.svg')">4.1 Process</button></li>
+            <li><button onclick="displaySVG('Theoretical 1-09.svg')">4.2 Concurrency</button></li>
+        </ul>
+
+        <li>Chapter 5 - The Box</li>
+        <ul class="sub-chapters">
+            <li><button onclick="displaySVG('Theoretical 1-10.svg')">5.1 OOP</button></li>
+            <li><button onclick="displaySVG('Theoretical 1-11.svg')">5.2 Group</button></li>
+        </ul>
+    </ul>
+</div>
+<div class="content-display">
+    <img id="content-display-area" src="" alt="Full-Screen SVG">
+</div>
+
+<div id="whiteboard-container" class="hidden">
+    <div class="controls">
+        <button id="clearBtn" class="control-btn">Clear</button>
+        <button id="eraseBtn" class="control-btn">Erase</button>
+        <button id="drawBtn" class="control-btn">Draw</button>
+
+        <div class="control-group">
+            <input type="color" id="colorPicker" value="#000000">
+            <label for="colorPicker">Pen Color</label>
+        </div>
+
+        <div class="control-group">
+            <input type="range" id="lineWidth" min="1" max="20" value="5">
+            <label for="lineWidth">Line Width</label>
+        </div>
+
+        <div class="control-group">
+            <input type="color" id="boardColorPicker" value="#FFFFFF">
+            <label for="boardColorPicker">Board Color</label>
+        </div>
+
+        <div class="control-group">
+            <input type="range" id="opacitySlider" min="0" max="100" value="100">
+            <label for="opacitySlider">Side Opacity</label>
+        </div>
+
+        <div class="control-group">
+            <input type="range" id="opacityMain" min="0" max="100" value="0">
+            <label for="opacityMain">Board Opacity</label>
+        </div>
+
+        <button id="closeBtn" class="control-btn">Close</button>
+    </div>
+    <canvas id="whiteboard"></canvas>
+</div>
+
+
+    <button id="openWhiteboardBtn" class="circular-button"><img src="pen.svg" alt="Open Whiteboard" class="button-icon"></button>
+    
+    <script src="scripts.js"></script>
+    <script>
+        // Set default SVG on page load
+        window.onload = function() {
+            displaySVG('Theoretical 1-01.svg');
+        };
+    </script>
+</body>
+</html>
